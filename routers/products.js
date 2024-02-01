@@ -50,16 +50,13 @@ router.get('/search/', async (req, res) => {
 // creating a new product
 
 router.post(`/`, async(req, res) => {
-    const { name, description, price, variants } = req.body;
+    const { name, description, price } = req.body;
 
-    const createdVariants = await Variant.create(variants);
-
-    const variantIds = createdVariants.map(variant => variant._id);
     const product = new Product({
         name: name,
         description: description,
         price: price,
-        variants: variantIds,
+        variants: [],
     });
 
     product.save().then((createdProduct => {
@@ -100,6 +97,34 @@ router.delete('/:id', async (req, res) => {
     } catch (error) {
         console.error(error);
         res.status(500).json({ success: false, description: 'Internal Server Error' });
+    }
+});
+
+// Update a product by ID
+
+router.put('/:id', async (req, res) => {
+    try {
+        const productId = req.params.id;
+        const { name, description, price } = req.body;
+
+        // Find the product by ID and update its fields
+        const updatedProduct = await Product.findByIdAndUpdate(productId, {
+            name: name,
+            description: description,
+            price: price,
+        }, { new: true });
+
+        if (!updatedProduct) {
+            return res.status(404).json({ success: false, description: 'Product not found' });
+        }
+
+        res.status(200).json(updatedProduct);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            error: error.message,
+            success: false,
+        });
     }
 });
 

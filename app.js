@@ -25,8 +25,10 @@ app.use(morgan('tiny'));
 
 // routers
 const productsRouter = require('./routers/products');
+const variantsRouter = require('./routers/variants');
 
 app.use(`${api}/products`,productsRouter)
+app.use(`${api}/variants`,variantsRouter)
 
 
 
