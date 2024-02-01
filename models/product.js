@@ -13,5 +13,6 @@ const productSchema = mongoose.Schema({
     variants: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Variant' }],
 });
 
+
 exports.Product = mongoose.model('Product', productSchema);
 
