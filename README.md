@@ -14,6 +14,31 @@ Welcome to EcomAPI, a robust REST API for your e-commerce needs. This project is
 ```
 git clone https://github.com/sanjaioffi/mirrAR-intern.git
 ```
+
+# check the folder structure
+
+# mirrAR-intern
+
+* [models/](.mirrAR-intern/models)
+  * [product.js](.mirrAR-intern/models/product.js)
+  * [variant.js](.mirrAR-intern/models/variant.js)
+* [node_modules/](.mirrAR-intern/node_modules)
+
+* [routers/](.mirrAR-intern/routers)
+  * [products.js](.mirrAR-intern/routers/products.js)
+  * [variants.js](.mirrAR-intern/routers/variants.js)
+* [test/](.mirrAR-intern/test)
+  * [endpoint.test.js](.mirrAR-intern/test/endpoint.test.js)
+  * [product.test.js](.mirrAR-intern/test/product.test.js)
+  * [search.test.js](.mirrAR-intern/test/search.test.js)
+* [.env](.mirrAR-intern/.env)
+* [.mocharc.json](.mirrAR-intern/.mocharc.json)
+* [app.js](.mirrAR-intern/app.js)
+* [package-lock.json](.mirrAR-intern/package-lock.json)
+* [package.json](.mirrAR-intern/package.json)
+
+
+
 - Install dependencies
 After cloning/downloading the source code, change directory to project folder ( project root folder ).
 Run following command:
@@ -26,6 +51,11 @@ This command will install all the required dependancies.
 - Build and run the project
 ```
 npm start
+```
+
+- Test the project
+```
+npm test
 ```
 
 - API Documentation
