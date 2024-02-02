@@ -112,7 +112,7 @@ router.put('/:id', async (req, res) => {
             name: name,
             description: description,
             price: price,
-        }, { new: true });
+        }, { new: true }).populate('variants');
 
         if (!updatedProduct) {
             return res.status(404).json({ success: false, description: 'Product not found' });
