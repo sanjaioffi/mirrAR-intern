@@ -34,6 +34,6 @@ npm start
   Postman Documentation : https://documenter.getpostman.com/view/27773024/2s9Yyv9zXH#cb0108b1-8d9e-4cc5-8096-db237174cc0e
   ## Run in Postman
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](postman://app/collections/import/27773024-bd1fd0f1-a2bb-4651-9f74-a6606befb563-2s9Yyv9zXH?referrer=https%3A%2F%2Fdocumenter.getpostman.com%2Fview%2F27773024%2F2s9Yyv9zXH&versionTag=latest&source=documenter)
+[<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://god.gw.postman.com/run-collection/27773024-bd1fd0f1-a2bb-4651-9f74-a6606befb563?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D27773024-bd1fd0f1-a2bb-4651-9f74-a6606befb563%26entityType%3Dcollection%26workspaceId%3D11c69bfb-4c5f-4b51-a347-2091cc1cee94)
 
 
