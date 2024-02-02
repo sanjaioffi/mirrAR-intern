@@ -6,6 +6,7 @@ Welcome to EcomAPI, a robust REST API for your e-commerce needs. This project is
 
 # Pre-requisites
 - Install [Node.js](https://nodejs.org/en/download) Latest LTS Version: 20.11.0 (includes npm 10.2.4)
+- Install [Postman](https://www.postman.com/downloads/) for accessing the collection.
 
 
 # Getting started
