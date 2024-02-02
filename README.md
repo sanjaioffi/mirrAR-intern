@@ -37,7 +37,7 @@ npm start
 > Ensure that the server is live when using Postman for testing API endpoints. The server acts as the backbone, responding to incoming requests and allowing Postman to simulate interactions with your API.*
 
 > [!TIP]
-> To confirm the server is live, execute the `npm start` command from your project's root directory. This initiates the server, and you should see a confirmation message or status indication in your terminal. This step is crucial for accurate testing using Postman, as it relies on a responsive server to process requests.==
+> To confirm the server is live, execute the `npm start` command from your project's root directory. This initiates the server, and you should see a confirmation message or status indication in your terminal. This step is crucial for accurate testing using Postman, as it relies on a responsive server to process requests.
 
 - API Documentation
   
