@@ -46,3 +46,5 @@ app.listen(port, () => {
     console.log(api);
   console.log(`Server running on http://localhost:${port}`);
 });
+
+module.exports = app;
