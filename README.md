@@ -1,8 +1,8 @@
 
-# mirrAr Backend Task - E-commerce REST API
+# mirrAR Backend Task - E-commerce REST API
 
 Welcome to EcomAPI, a robust REST API for your e-commerce needs. This project is crafted with Node.js, ensuring a powerful and scalable solution for managing your products and variants.
----
+
 
 # Pre-requisites
 - Install [Node.js](https://nodejs.org/en/download) Latest LTS Version: 20.11.0 (includes npm 10.2.4)
