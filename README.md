@@ -39,6 +39,9 @@ npm start
 > [!TIP]
 > To confirm the server is live, execute the `npm start` command from your project's root directory. This initiates the server, and you should see a confirmation message or status indication in your terminal. This step is crucial for accurate testing using Postman, as it relies on a responsive server to process requests.
 
+
+
+
 - API Documentation
   
 ![Logo](https://cdn.cookielaw.org/logos/70564414-548a-4286-8ad7-04d95b172a08/e26443c0-68d1-47c8-b8fc-9bc765da2e95/3a159462-db70-43cf-a27d-f602a6baed44/pm-logo-horiz.png)
@@ -54,6 +57,33 @@ npm start
 ```
 npm test
 ```
+
+# Database Design: Separation of Products and Variants
+> [!IMPORTANT]
+> **Decision:**
+> - *Separation:* Products and variants stored in distinct collections.
+
+**Rationale:**
+
+## 1. Flexibility and Normalization:
+   - Allows for handling products without variants or with distinct attributes.
+   - Aligns with normalization principles, minimizing redundancy.
+
+## 2. Scalability:
+   - Permits independent optimization and scaling of each collection.
+   - Enhances resource allocation for anticipated ecommerce store growth.
+
+## 3. Simplified Queries:
+   - Facilitates straightforward queries, optimizing information retrieval.
+   - Balances complexity for efficient querying.
+
+
+**Development and Maintenance:**
+   - Despite introducing some complexity, chosen for scalability and query optimization benefits.
+
+> [!NOTE]
+> This design supports a robust, scalable ecommerce database tailored to project needs.
+
 <h1 align="center"> API Endpoints </h1>
 
 
