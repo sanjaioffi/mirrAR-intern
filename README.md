@@ -60,16 +60,10 @@ npm test
 
 # Products
 
-1. **API to get all products**
-   - Method: `GET`
-   - URL: `http://localhost:3000/api/v1/products/`
 
-2. **API to get a specific product by ID**
-   - Method: `GET`
-   - URL: `http://localhost:3000/api/v1/products/{product id}`
-     (Get the ID from the MongoDB database of an existing product.)
 
-3. **API to create a new product**
+
+1. **API to create a new product**
    - Method:`POST`
    - URL: `http://localhost:3000/api/v1/products/`
    - Body (JSON):
@@ -83,6 +77,18 @@ npm test
      
      }
      ```
+
+2. **API to get a specific product by ID**
+   - Method: `GET`
+   - URL: `http://localhost:3000/api/v1/products/{product id}`
+     (Get the ID from the MongoDB database of an existing product.)
+     
+
+3. **API to get all products**
+   - Method: `GET`
+   - URL: `http://localhost:3000/api/v1/products/`
+
+
 
 4. **API to update a product by ID**
    - Method:` PUT`
