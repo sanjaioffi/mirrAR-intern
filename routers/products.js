@@ -1,3 +1,4 @@
+
 const express = require('express');
 const router =  express.Router();
 
@@ -45,6 +46,26 @@ router.get('/search/', async (req, res) => {
         res.status(500).json({ success: false, error: error.message });
     }
 });
+
+// getting a product by id
+
+router.get('/:id', async (req, res) => {
+    try {
+        const productId = req.params.id;
+
+        const product = await Product.findById(productId).populate('variants');
+
+        if (!product) {
+            return res.status(404).json({ success: false, description: 'Product not found' });
+        }
+        res.status(200).json(product);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, description: 'Internal Server Error' });
+    }
+});
+
+
 
 
 // creating a new product

@@ -5,17 +5,14 @@
 
 // const request = supertest(app);
 
-// // Import the models
 // const { Product } = require('../models/product');
 // const { Variant } = require('../models/variant');
 
-// // Clear the collections before running tests
 // beforeEach(async () => {
 //   await Product.deleteMany({});
 //   await Variant.deleteMany({});
 // });
 
-// // Close the database connection after running tests
 // after(async () => {
 //   await mongoose.connection.close();
 // });
@@ -24,72 +21,51 @@
 //   return await Product.create(productData);
 // };
 
-// describe('Search Tests - Products', () => {
-//   it('should search for products by name, description, or variant name', async () => {
-//     const fakeProducts = [
-//       { name: 'TestProduct1', description: 'Description1', price: 10 },
-//       { name: 'TestProduct2', description: 'Description2', price: 15 },
-//     ];
-//     const createdProducts = await Product.insertMany(fakeProducts);
+// const createFakeVariant = async (variantData) => {
+//   return await Variant.create(variantData);
+// };
 
-//     const fakeVariant = {
-//       productId: createdProducts[0]._id,
-//       name: 'TestVariant',
-//       sku: 'ABC123',
-//       additionalPrice: 5,
-//       stockCount: 50,
-//     };
-//     await Variant.create(fakeVariant);
+// describe('Product Search Tests', () => {
+//   it('should search for a product by name, description, or variant name', async () => {
+//     // Create a product with associated variants
+//     const fakeProduct = { name: 'SearchableProduct', description: 'Searchable Description', price: 50 };
+//     const createdProduct = await createFakeProduct(fakeProduct);
 
-//     // Search by name
-//     const searchQueryByName = 'TestProduct1';
-//     const responseByName = await request
-//       .get(`/api/v1/products/search?q=${searchQueryByName}`)
-//       .expect(200);
+//     const fakeVariant = { productId: createdProduct._id, name: 'SearchableVariant', sku: 'SV123', additionalPrice: 15, stockCount: 30 };
+//     await createFakeVariant(fakeVariant);
 
-//     const expectedProductByName = {
-//       __v: 0,
-//       _id: responseByName.body[0]?._id,
-//       description: fakeProducts[0].description,
-//       name: fakeProducts[0].name,
-//       price: fakeProducts[0].price,
-//       variants: [],
-//     };
+//     // Perform a search query
+//     const searchQuery = 'Searchable';
 
-//     assert.deepStrictEqual(responseByName.body, [expectedProductByName]);
+//     // Make the request to the search endpoint
+//     const response = await request.get(`/api/v1/products/search?q=${searchQuery}`).expect(200);
 
-//     // Search by description
-//     const searchQueryByDescription = 'Description2';
-//     const responseByDescription = await request
-//       .get(`/api/v1/products/search?q=${searchQueryByDescription}`)
-//       .expect(200);
+//     // Assert that the search results include the expected product
+//     assert.strictEqual(response.body.length, 1);
+//     const resultProduct = response.body[0];
 
-//     const expectedProductByDescription = {
-//       __v: 0,
-//       _id: responseByDescription.body[0]?._id,
-//       description: fakeProducts[1].description,
-//       name: fakeProducts[1].name,
-//       price: fakeProducts[1].price,
-//       variants: [],
-//     };
+//     assert.strictEqual(resultProduct.name, fakeProduct.name);
+//     assert.strictEqual(resultProduct.description, fakeProduct.description);
+//     assert.strictEqual(resultProduct.price, fakeProduct.price);
 
-//     assert.deepStrictEqual(responseByDescription.body, [expectedProductByDescription]);
+//     // Assert that the variants are also included in the result
+//     assert.strictEqual(resultProduct.variants.length, 1);
+//     const resultVariant = resultProduct.variants[0];
 
-//     // Search by variant name
-//     const searchQueryByVariantName = 'TestVariant';
-//     const responseByVariantName = await request
-//       .get(`/api/v1/products/search?q=${searchQueryByVariantName}`)
-//       .expect(200);
-
-//     const expectedProductByVariantName = {
-//       __v: 0,
-//       _id: responseByVariantName.body[0]?._id,
-//       description: fakeProducts[0].description,
-//       name: fakeProducts[0].name,
-//       price: fakeProducts[0].price,
-//       variants: [],
-//     };
-
-//     assert.deepStrictEqual(responseByVariantName.body, [expectedProductByVariantName]);
+//     // assert.strictEqual(resultVariant.name, fakeVariant.name);
+//     // assert.strictEqual(resultVariant.sku, fakeVariant.sku);
+//     // assert.strictEqual(resultVariant.additionalPrice, fakeVariant.additionalPrice);
+//     // assert.strictEqual(resultVariant.stockCount, fakeVariant.stockCount);
 //   });
+
+// //   it('should handle no matching results', async () => {
+// //     // Perform a search query with no matching results
+// //     const searchQuery = 'NonExistent';
+
+// //     // Make the request to the search endpoint
+// //     const response = await request.get(`/api/v1/products/search?q=${searchQuery}`).expect(200);
+
+// //     // Assert that the search results are empty
+// //     assert.strictEqual(response.body.length, 0);
+// //   });
 // });
