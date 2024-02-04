@@ -54,3 +54,100 @@ npm start
 ```
 npm test
 ```
+<h1 align="center"> API Endpoints </h1>
+
+
+
+# Products
+
+1. **API to get all products**
+   - Method: `GET`
+   - URL: `http://localhost:3000/api/v1/products/`
+
+2. **API to get a specific product by ID**
+   - Method: `GET`
+   - URL: `http://localhost:3000/api/v1/products/{product id}`
+     (Get the ID from the MongoDB database of an existing product.)
+
+3. **API to create a new product**
+   - Method:`POST`
+   - URL: `http://localhost:3000/api/v1/products/`
+   - Body (JSON):
+
+     ```json
+     {
+     
+     "name": "MEENAZ Stainless Steel Stylish adjustable proposal Couple band thumb Silver Platinum Blue combo chain Finger Ring for Men Mens couples gents unisex Boys Boyfriend MEN RINGS-AM053",
+     "description": "Metal type - Black Rhodium Plated Silver",
+     "price":156
+     
+     }
+     ```
+
+4. **API to update a product by ID**
+   - Method:` PUT`
+   - URL: `http://localhost:3000/api/v1/products/{product id}`
+     (Get the ID from the MongoDB database of an existing product.)
+   - Body (JSON):
+
+     ```json
+     {
+     
+     "name": "MEENAZ Stainless Steel Stylish adjustable proposal Couple band thumb Silver Platinum Blue combo chain Finger Ring for Men Mens couples gents unisex Boys Boyfriend MEN RINGS-AM053",
+     "description": "Metal type - Black Rhodium Plated Silver",
+     "price":156
+     
+     }
+     ```
+
+5. **API to delete a product by ID**
+   - Method: `DELETE`
+   - URL: `http://localhost:3000/api/v1/products/{product id}`
+     (Get the ID from the MongoDB database of an existing product.)
+
+6. **API to search for products by name, description, or variant name**
+   - Method: GET
+   - URL: `http://localhost:3000/api/v1/products/{keyword}`
+     (keyword to find the product.)
+
+
+# Variants
+
+
+1. **API to create a new Variant**
+   - Method:`POST`
+   - URL: `http://localhost:3000/api/v1/variants/`
+   - Body (JSON):
+
+     ```json
+      {
+            "productId": "65bbe290cb01cc9414397133",
+            "name": "MEENAZ Stainless Steel Stylish adjustable proposal Couple band thumb Silver Platinum Blue combo chain Finger Ring for Men Mens couples gents unisex Boys Boyfriend MEN RINGS-AM053 SILVER BLACK",
+            "sku": "AA-1",
+            "additionalPrice": 50,
+            "stockCount": 100
+     }
+     ```
+
+2. **API to update a Variant by ID**
+   - Method:` PUT`
+   - URL: `http://localhost:3000/api/v1/variants/{variant id}`
+     (Get the ID from the MongoDB database of an existing variant.)
+   - Body (JSON):
+
+     ```json
+      {
+            "productId": "65bbe290cb01cc9414397133",
+            "name": "MEENAZ Stainless Steel Stylish adjustable proposal Couple band thumb Silver Platinum Blue combo chain Finger Ring for Men Mens couples gents unisex Boys Boyfriend MEN RINGS-AM053 SILVER BLACK",
+            "sku": "AA-1",
+            "additionalPrice": 50,
+            "stockCount": 100
+      }
+     ```
+
+3. **API to delete a variant by ID**
+   - Method: `DELETE`
+   - URL: `http://localhost:3000/api/v1/varinats/{variant id}`
+     (Get the ID from the MongoDB database of an existing variant.)
+
+
