@@ -79,7 +79,7 @@ npm test
 
 
 **Development and Maintenance:**
-   - Despite introducing some complexity, chosen for scalability and query optimization benefits.
+   - **Despite introducing some complexity, chosen for scalability and query optimization benefits.**
 
 > [!NOTE]
 > This design supports a robust, scalable ecommerce database tailored to project needs.
